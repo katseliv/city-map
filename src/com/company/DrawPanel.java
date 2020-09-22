@@ -5,7 +5,9 @@ import com.company.objects.Point;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.font.TextAttribute;
 import java.awt.geom.AffineTransform;
+import java.text.AttributedString;
 
 public class DrawPanel extends JPanel {
     private static final int SCALE = 100;
@@ -25,7 +27,7 @@ public class DrawPanel extends JPanel {
         drawRoad(g2d);
         drawHouses(g2d);
         drawCar(g2d);
-
+        drawTable(g2d);
 //        sun.draw(g2d);
     }
 
@@ -106,11 +108,26 @@ public class DrawPanel extends JPanel {
         car.draw(g2d, true, new Point(SCALE + INDENT * 3, SCALE * 4));
         car.draw(g2d, true, new Point(SCALE * 13 + INDENT * 3, SCALE * 3));
         car.setColor(new Color(215, 255, 0));
-        car.draw(g2d,true, new Point(SCALE * 5 + INDENT * 3, SCALE * 6));
+        car.draw(g2d, true, new Point(SCALE * 5 + INDENT * 3, SCALE * 6));
         car.setColor(new Color(201, 0, 255));
 
         car.draw(g2d, false, new Point(SCALE * 12 + INDENT, SCALE * 7 + INDENT * 2));
     }
 
+    public void drawTable(Graphics2D g2d) {
+        g2d.setColor(new Color(217, 157, 15));
+        g2d.fillRect(SCALE * 16 + INDENT, SCALE * 5, SCALE * 2, SCALE);
 
+        g2d.setColor(Color.BLACK);
+        g2d.setStroke(new BasicStroke(6.0f));
+        g2d.drawLine(SCALE * 17 + INDENT, SCALE * 6 + 4, SCALE * 17 + INDENT, SCALE * 7 - 7);
+
+        AffineTransform fontAT = new AffineTransform();
+        Font font = new Font("serif", Font.BOLD, 19).deriveFont(fontAT);
+        AttributedString as = new AttributedString("Welcome to My City !!!");
+        as.addAttribute(TextAttribute.FONT, font);
+
+        g2d.drawString(as.getIterator(), SCALE * 16 + INDENT + 5, SCALE * 6 - 50);
+
+    }
 }
