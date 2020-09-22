@@ -20,8 +20,16 @@ public class Car {
         this.color = color;
     }
 
-    public void draw(Graphics2D g2d, Point point){
+    public void draw(Graphics2D g2d, boolean isVertical, Point point){
         g2d.setColor(color);
+        if (isVertical) {
+            verticalCar(g2d, point);
+        } else {
+            horizontalCar(g2d, point);
+        }
+    }
+
+    private void verticalCar(Graphics2D g2d, Point point){
         g2d.fillRoundRect(point.getX(), point.getY(), width, length, 50, 50);
 
         g2d.setColor(COLOR_OF_WHEEL);
@@ -34,5 +42,16 @@ public class Car {
         g2d.fillRoundRect(point.getX() - 5 + width, point.getY() + length - 25, 20, 25, 40, 40);
     }
 
+    private void horizontalCar(Graphics2D g2d, Point point){
+        g2d.fillRoundRect(point.getX(), point.getY(), length, width, 50, 50);
 
+        g2d.setColor(COLOR_OF_WHEEL);
+        g2d.fillRoundRect(point.getX(), point.getY() - 15, 25, 20, 30, 30);
+
+        g2d.fillRoundRect(point.getX(), point.getY() - 5 + width, 25, 20, 30, 30);
+
+        g2d.fillRoundRect(point.getX() + length - 25, point.getY() - 15, 25, 20, 40, 40);
+
+        g2d.fillRoundRect(point.getX() + length - 25, point.getY() - 5 + width, 25, 20, 40, 40);
+    }
 }

@@ -83,12 +83,14 @@ public class DrawPanel extends JPanel {
         road.draw(g2d, true, new Point(SCALE * 14 + INDENT, 0), 2);
 
         road.draw(g2d, true, new Point(SCALE * 7 + INDENT, SCALE * 8), 3);
+
+        road.draw(g2d, false, new Point(SCALE * 16 + INDENT, SCALE * 3), 4);
     }
 
     public void drawHouses(Graphics2D g2d) {
-        House house = new House(new Color(142, 39, 13), SCALE * 3, SCALE * 2);
+        House house = new House(new Color(142, 39, 13), SCALE * 4, SCALE * 2);
         house.draw(g2d, true, new Point(SCALE * 10 + INDENT, SCALE * 2));
-        House house1 = new House(new Color(41, 145, 194), SCALE * 4, SCALE * 2);
+        House house1 = new House(new Color(41, 145, 194), SCALE * 5, SCALE * 2);
         house1.draw(g2d, true, new Point(SCALE * 3 + INDENT - 50, SCALE * 4));
         House house2 = new House(new Color(157, 92, 222), SCALE * 5, SCALE * 2);
         house2.draw(g2d, false, new Point(SCALE * 3 + INDENT, -SCALE));
@@ -96,16 +98,18 @@ public class DrawPanel extends JPanel {
         house3.draw(g2d, true, new Point(-SCALE - 50 + INDENT, SCALE));
         House house4 = new House(new Color(41, 145, 194), SCALE * 3, SCALE * 2);
         house4.draw(g2d, false, new Point(SCALE * 9 + INDENT, -SCALE));
+        House house5 = new House(new Color(240, 255, 14), SCALE * 9, SCALE * 2);
+        house5.draw(g2d, false, new Point(SCALE * 9 + INDENT, SCALE * 9));
     }
 
     public void drawCar(Graphics2D g2d) {
-        car.draw(g2d, new Point(SCALE + INDENT * 3, SCALE * 4));
-        car.draw(g2d, new Point(SCALE * 13 + INDENT * 3, SCALE * 3));
+        car.draw(g2d, true, new Point(SCALE + INDENT * 3, SCALE * 4));
+        car.draw(g2d, true, new Point(SCALE * 13 + INDENT * 3, SCALE * 3));
         car.setColor(new Color(215, 255, 0));
-        car.draw(g2d, new Point(SCALE * 5 + INDENT * 3, SCALE * 6));
+        car.draw(g2d,true, new Point(SCALE * 5 + INDENT * 3, SCALE * 6));
         car.setColor(new Color(201, 0, 255));
 
-        car.draw(g2d, new Point(SCALE * 11 + INDENT * 3, SCALE * 4));
+        car.draw(g2d, false, new Point(SCALE * 12 + INDENT, SCALE * 7 + INDENT * 2));
     }
 
 
