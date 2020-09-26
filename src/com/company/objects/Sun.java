@@ -5,12 +5,10 @@ import com.company.Drawable;
 import java.awt.*;
 
 public class Sun implements Drawable { // должен быть либо абстрактным, либо реализовывать метод
-    private int x, y, r, R, n;
+    private int r, R, n;
     private Color color;
 
-    public Sun(int x, int y, int r, int r1, int n, Color color) {
-        this.x = x;
-        this.y = y;
+    public Sun(int r, int r1, int n, Color color) {
         this.r = r;
         R = r1;
         this.n = n;
@@ -18,8 +16,8 @@ public class Sun implements Drawable { // должен быть либо абс�
     }
 
     @Override
-    public void draw(Graphics2D g2d) {
-        drawSun(g2d, x, y, r, R, n, color);
+    public void draw(Graphics2D g2d, Point point) {
+        drawSun(g2d, point.getX(), point.getY(), r, R, n, color);
     }
 
     private void drawSun(Graphics2D g2d, int x, int y, int radiusOfSunBody, int radiusOfBeam, int numberOfBeam, Color color) {

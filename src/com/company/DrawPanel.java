@@ -15,9 +15,10 @@ public class DrawPanel extends JPanel {
 
     private final Flower flower = new Flower(new Color(240, 20, 20));
     private final Road road = new Road(Color.GRAY);
-    private final Car car = new Car(new Color(0x6C6CD2));
+    private final Car verticalCar = new Car(new Color(0x6C6CD2), true);
+    private final Car horizontalCar = new Car(new Color(0x6C6CD2), false);
 
-    private final Sun sun = new Sun(700, 600, 60, 700, 15, Color.ORANGE);
+    private final Sun sun = new Sun(60, 700, 15, Color.ORANGE);
 
     @Override
     public void paint(Graphics g) {
@@ -105,13 +106,13 @@ public class DrawPanel extends JPanel {
     }
 
     public void drawCar(Graphics2D g2d) {
-        car.draw(g2d, true, new Point(SCALE + INDENT * 3, SCALE * 4));
-        car.draw(g2d, true, new Point(SCALE * 13 + INDENT * 3, SCALE * 3));
-        car.setColor(new Color(215, 255, 0));
-        car.draw(g2d, true, new Point(SCALE * 5 + INDENT * 3, SCALE * 6));
-        car.setColor(new Color(201, 0, 255));
+        verticalCar.draw(g2d, new Point(SCALE + INDENT * 3, SCALE * 4));
+        verticalCar.draw(g2d, new Point(SCALE * 13 + INDENT * 3, SCALE * 3));
+        verticalCar.setColor(new Color(215, 255, 0));
+        verticalCar.draw(g2d, new Point(SCALE * 5 + INDENT * 3, SCALE * 6));
+        verticalCar.setColor(new Color(201, 0, 255));
 
-        car.draw(g2d, false, new Point(SCALE * 12 + INDENT, SCALE * 7 + INDENT * 2));
+        horizontalCar.draw(g2d, new Point(SCALE * 12 + INDENT, SCALE * 7 + INDENT * 2));
     }
 
     public void drawTable(Graphics2D g2d) {

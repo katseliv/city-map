@@ -1,15 +1,18 @@
 package com.company.objects;
 
+import com.company.Drawable;
 import java.awt.*;
 
-public class Car {
+public class Car implements Drawable {
     private Color color;
+    private boolean isVertical;
     private static final Color COLOR_OF_WHEEL = new Color(0, 0, 0);
     private int length = 100;
     private int width = 60;
 
-    public Car(Color color) {
+    public Car(Color color, boolean isVertical) {
         this.color = color;
+        this.isVertical = isVertical;
     }
 
     public Color getColor() {
@@ -20,7 +23,8 @@ public class Car {
         this.color = color;
     }
 
-    public void draw(Graphics2D g2d, boolean isVertical, Point point){
+    @Override
+    public void draw(Graphics2D g2d, Point point) {
         g2d.setColor(color);
         if (isVertical) {
             verticalCar(g2d, point);
