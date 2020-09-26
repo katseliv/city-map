@@ -4,18 +4,20 @@ import com.company.Drawable;
 
 import java.awt.*;
 
-public class Road {
-    private Color color;
+public class Road{
+    private final Color color;
+    private final boolean isVertical;
     private static final Border BORDER = new Border(new Color(55, 60, 55), 10);
     private static final Markup MARKUP = new Markup(40, 10);
     private static final int SCALE = 100;
     private static final int INDENT = 30;
 
-    public Road(Color color) {
+    public Road(Color color, boolean isVertical) {
         this.color = color;
+        this.isVertical = isVertical;
     }
 
-    public void draw(Graphics2D g2d, boolean isVertical, Point point, int length) {
+    public void draw(Graphics2D g2d, Point point, int length){
         if (isVertical) {
             verticalRoad(g2d, point, length);
         } else {
@@ -101,5 +103,4 @@ public class Road {
         g2d.setColor(color);
         g2d.fillArc(point.getX(), point.getY(), SCALE * 2, SCALE * 2, startAngel, angel);
     }
-
 }

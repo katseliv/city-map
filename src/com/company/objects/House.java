@@ -1,20 +1,25 @@
 package com.company.objects;
 
+import com.company.Drawable;
+
 import java.awt.*;
 
-public class House {
-    private Color colorOfRoof;
+public class House implements Drawable {
+    private final Color colorOfRoof;
+    private final boolean isVertical;
     private static final Color COLOR_OF_LINES = new Color(0, 0, 0);
-    private int length;
-    private int width;
+    private final int length;
+    private final int width;
 
-    public House(Color colorOfRoof, int length, int width) {
+    public House(Color colorOfRoof, boolean isVertical, int length, int width) {
         this.colorOfRoof = colorOfRoof;
+        this.isVertical = isVertical;
         this.length = length;
         this.width = width;
     }
 
-    public void draw(Graphics2D g2d, boolean isVertical, Point point) {
+    @Override
+    public void draw(Graphics2D g2d, Point point) {
         if (isVertical) {
             verticalHouse(g2d, point);
         } else {
@@ -42,12 +47,11 @@ public class House {
 
         g2d.setColor(COLOR_OF_LINES);
         g2d.setStroke(new BasicStroke(5.0f));
-        g2d.drawLine(point.getX() + length / 3,point.getY() + width / 2, point.getX() + length * 2 / 3, point.getY() + width / 2);
+        g2d.drawLine(point.getX() + length / 3, point.getY() + width / 2, point.getX() + length * 2 / 3, point.getY() + width / 2);
 
         g2d.drawLine(point.getX() + length / 3, point.getY() + width / 2, point.getX() + length / 16, point.getY() + width / 8);
         g2d.drawLine(point.getX() + length / 3, point.getY() + width / 2, point.getX() + length / 16, point.getY() + width * 7 / 8);
         g2d.drawLine(point.getX() + length * 2 / 3, point.getY() + width / 2, point.getX() + length * 15 / 16, point.getY() + width / 8);
         g2d.drawLine(point.getX() + length * 2 / 3, point.getY() + width / 2, point.getX() + length * 15 / 16, point.getY() + width * 7 / 8);
     }
-
 }

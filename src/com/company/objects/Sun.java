@@ -21,7 +21,6 @@ public class Sun implements Drawable { // должен быть либо абс�
     }
 
     private void drawSun(Graphics2D g2d, int x, int y, int radiusOfSunBody, int radiusOfBeam, int numberOfBeam, Color color) {
-
         drawSunBody(g2d, x, y, radiusOfSunBody, color);
 
         double angel = 2 * Math.PI / numberOfBeam;
@@ -36,7 +35,6 @@ public class Sun implements Drawable { // должен быть либо абс�
             g2d.setStroke(new BasicStroke(10.0f));
             g2d.drawLine((int) dx1, (int) dy1, (int) dx2, (int) dy2);
         }
-
     }
 
     private void drawSunBody(Graphics2D g2d, int x, int y, int radiusOfSunBody, Color color) {

@@ -31,5 +31,4 @@ public class Markup {
     public void setWidth(int width) {
         this.width = width;
     }
-
 }

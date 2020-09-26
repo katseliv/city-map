@@ -1,8 +1,10 @@
 package com.company.objects;
 
+import com.company.Drawable;
+
 import java.awt.*;
 
-public class Flower {
+public class Flower implements Drawable {
     private Color color;
     private static final Color CENTER = new Color(255, 235, 50);
     private static final int RADIUS = 10;
@@ -19,6 +21,7 @@ public class Flower {
         this.color = color;
     }
 
+    @Override
     public void draw(Graphics2D g2d, Point center) {
         g2d.setColor(color);
         g2d.fillArc(center.getX() - 2 * RADIUS, center.getY() - 2 * RADIUS, 4 * RADIUS, 4 * RADIUS, 10, 70);

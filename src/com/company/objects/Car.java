@@ -5,10 +5,10 @@ import java.awt.*;
 
 public class Car implements Drawable {
     private Color color;
-    private boolean isVertical;
+    private final boolean isVertical;
     private static final Color COLOR_OF_WHEEL = new Color(0, 0, 0);
-    private int length = 100;
-    private int width = 60;
+    private final int length = 100;
+    private final int width = 60;
 
     public Car(Color color, boolean isVertical) {
         this.color = color;
