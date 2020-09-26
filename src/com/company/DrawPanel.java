@@ -18,6 +18,8 @@ public class DrawPanel extends JPanel {
     private final Road horizontalRoad = new Road(Color.GRAY, false);
     private final Car verticalCar = new Car(new Color(0x6C6CD2), true);
     private final Car horizontalCar = new Car(new Color(0x6C6CD2), false);
+    //private House[] houses = { new House (new Color(142, 39, 13), true,SCALE * 4, SCALE * 2),  };
+
 
     private final Sun sun = new Sun(60, 700, 15, Color.ORANGE);
 
@@ -60,7 +62,7 @@ public class DrawPanel extends JPanel {
     public void drawRoad(Graphics2D g2d) {
         verticalRoad.draw(g2d,  new Point(SCALE + INDENT, 0), 8);
         horizontalRoad.draw(g2d, new Point(SCALE * 2 + INDENT, SCALE * 2), 6);
-        verticalRoad.drawCrossWalk(g2d, false, new Point(SCALE * 5 + INDENT, SCALE * 2));
+        horizontalRoad.drawCrossWalk(g2d,  new Point(SCALE * 5 + INDENT, SCALE * 2));
         verticalRoad.rotation(g2d, new Point(SCALE * 7 + INDENT, SCALE * 2), 0, 90);
         verticalRoad.draw(g2d, new Point(SCALE * 8 + INDENT, SCALE * 3), 1);
         verticalRoad.rotation(g2d, new Point(SCALE * 7 + INDENT, SCALE * 3), 270, 90);
@@ -69,7 +71,7 @@ public class DrawPanel extends JPanel {
         verticalRoad.draw(g2d, new Point(SCALE * 5 + INDENT, SCALE * 5), 2);
         verticalRoad.rotation(g2d, new Point(SCALE * 5 + INDENT, SCALE * 6), 180, 90);
         horizontalRoad.draw(g2d, new Point(SCALE * 6 + INDENT, SCALE * 7), 14);
-        verticalRoad.drawCrossWalk(g2d, false, new Point(SCALE * 10 + INDENT, SCALE * 7));
+        horizontalRoad.drawCrossWalk(g2d, new Point(SCALE * 10 + INDENT, SCALE * 7));
         verticalRoad.rotation(g2d, new Point(INDENT, SCALE * 7), 270, 90);
         horizontalRoad.draw(g2d, new Point(-SCALE + INDENT, SCALE * 8), 2);
 

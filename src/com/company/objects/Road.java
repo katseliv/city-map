@@ -64,7 +64,7 @@ public class Road{
         g2d.fillRect(point.getX(), point.getY(), SCALE, SCALE);
     }
 
-    public void drawCrossWalk(Graphics2D g2d, boolean isVertical, Point point) {
+    public void drawCrossWalk(Graphics2D g2d, Point point) {
         if (isVertical) {
             verticalCrossWalk(g2d, point);
         } else {
