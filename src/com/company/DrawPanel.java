@@ -18,7 +18,13 @@ public class DrawPanel extends JPanel {
     private final Road horizontalRoad = new Road(Color.GRAY, false);
     private final Car verticalCar = new Car(new Color(0x6C6CD2), true);
     private final Car horizontalCar = new Car(new Color(0x6C6CD2), false);
-    //private House[] houses = { new House (new Color(142, 39, 13), true,SCALE * 4, SCALE * 2),  };
+    private House[] houses = { new House (new Color(142, 39, 13), true,SCALE * 4, SCALE * 2, new Point(SCALE * 10 + INDENT, SCALE * 2)),
+            new House(new Color(41, 145, 194), true, SCALE * 5, SCALE * 2, new Point(SCALE * 3 + INDENT - 50, SCALE * 4)),
+            new House(new Color(157, 92, 222), false,SCALE * 5, SCALE * 2, new Point(SCALE * 3 + INDENT, -SCALE)),
+            new House(new Color(142, 39, 13), true,SCALE * 6, SCALE * 2, new Point(-SCALE - 50 + INDENT, SCALE)),
+            new House(new Color(41, 145, 194), false, SCALE * 3, SCALE * 2, new Point(SCALE * 9 + INDENT, -SCALE)),
+            new House(new Color(240, 255, 14), false, SCALE * 9, SCALE * 2, new Point(SCALE * 9 + INDENT, SCALE * 9))
+    };
 
 
     private final Sun sun = new Sun(60, 700, 15, Color.ORANGE);
@@ -86,25 +92,27 @@ public class DrawPanel extends JPanel {
 
         verticalRoad.draw(g2d, new Point(SCALE * 14 + INDENT, SCALE * 5), 2);
         verticalRoad.draw(g2d, new Point(SCALE * 14 + INDENT, 0), 2);
-
         verticalRoad.draw(g2d, new Point(SCALE * 7 + INDENT, SCALE * 8), 3);
-
         horizontalRoad.draw(g2d, new Point(SCALE * 16 + INDENT, SCALE * 3), 4);
     }
 
     public void drawHouses(Graphics2D g2d) {
-        House house = new House(new Color(142, 39, 13), true,SCALE * 4, SCALE * 2);
-        house.draw(g2d, new Point(SCALE * 10 + INDENT, SCALE * 2));
-        House house1 = new House(new Color(41, 145, 194), true, SCALE * 5, SCALE * 2);
-        house1.draw(g2d, new Point(SCALE * 3 + INDENT - 50, SCALE * 4));
-        House house2 = new House(new Color(157, 92, 222), false,SCALE * 5, SCALE * 2);
-        house2.draw(g2d, new Point(SCALE * 3 + INDENT, -SCALE));
-        House house3 = new House(new Color(142, 39, 13), true,SCALE * 6, SCALE * 2);
-        house3.draw(g2d, new Point(-SCALE - 50 + INDENT, SCALE));
-        House house4 = new House(new Color(41, 145, 194), false, SCALE * 3, SCALE * 2);
-        house4.draw(g2d, new Point(SCALE * 9 + INDENT, -SCALE));
-        House house5 = new House(new Color(240, 255, 14), false, SCALE * 9, SCALE * 2);
-        house5.draw(g2d, new Point(SCALE * 9 + INDENT, SCALE * 9));
+        for (int i = 0; i < houses.length; i++) {
+            //houses[i].draw(g2d);
+        }
+
+        //House house = new House(new Color(142, 39, 13), true,SCALE * 4, SCALE * 2);
+        //house.draw(g2d, new Point(SCALE * 10 + INDENT, SCALE * 2));
+        //House house1 = new House(new Color(41, 145, 194), true, SCALE * 5, SCALE * 2);
+        //house1.draw(g2d, new Point(SCALE * 3 + INDENT - 50, SCALE * 4));
+        //House house2 = new House(new Color(157, 92, 222), false,SCALE * 5, SCALE * 2);
+        //house2.draw(g2d, new Point(SCALE * 3 + INDENT, -SCALE));
+        //House house3 = new House(new Color(142, 39, 13), true,SCALE * 6, SCALE * 2);
+        //house3.draw(g2d, new Point(-SCALE - 50 + INDENT, SCALE));
+        //House house4 = new House(new Color(41, 145, 194), false, SCALE * 3, SCALE * 2);
+        //house4.draw(g2d, new Point(SCALE * 9 + INDENT, -SCALE));
+        //House house5 = new House(new Color(240, 255, 14), false, SCALE * 9, SCALE * 2);
+        //house5.draw(g2d, new Point(SCALE * 9 + INDENT, SCALE * 9));
     }
 
     public void drawCar(Graphics2D g2d) {

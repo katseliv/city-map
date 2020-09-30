@@ -8,26 +8,28 @@ public class House implements Drawable {
     private final Color colorOfRoof;
     private final boolean isVertical;
     private static final Color COLOR_OF_LINES = new Color(0, 0, 0);
+    private final Point point;
     private final int length;
     private final int width;
 
-    public House(Color colorOfRoof, boolean isVertical, int length, int width) {
+    public House(Color colorOfRoof, boolean isVertical, int length, int width, Point point) {
         this.colorOfRoof = colorOfRoof;
         this.isVertical = isVertical;
         this.length = length;
         this.width = width;
+        this.point = point;
     }
 
     @Override
     public void draw(Graphics2D g2d, Point point) {
         if (isVertical) {
-            verticalHouse(g2d, point);
+            verticalHouse(g2d);
         } else {
-            horizontalHouse(g2d, point);
+            horizontalHouse(g2d);
         }
     }
 
-    public void verticalHouse(Graphics2D g2d, Point point) {
+    public void verticalHouse(Graphics2D g2d) {
         g2d.setColor(colorOfRoof);
         g2d.fillRect(point.getX(), point.getY(), width, length);
 
@@ -41,7 +43,7 @@ public class House implements Drawable {
         g2d.drawLine(point.getX() + width / 2, point.getY() + length * 2 / 3, point.getX() + width * 7 / 8, point.getY() + length * 15 / 16);
     }
 
-    public void horizontalHouse(Graphics2D g2d, Point point) {
+    public void horizontalHouse(Graphics2D g2d) {
         g2d.setColor(colorOfRoof);
         g2d.fillRect(point.getX(), point.getY(), length, width);
 
