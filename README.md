@@ -1,3 +1,3 @@
-# KG2020_G31_Task1
+# City Map
 
 ![alt text](City_Map.jpg "City Map")
